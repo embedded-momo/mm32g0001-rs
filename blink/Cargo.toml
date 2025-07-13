@@ -1,0 +1,19 @@
+[package]
+name = "blink"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+cortex-m = { version = "0.7.7", features = ["critical-section-single-core"] }
+cortex-m-rt = "0.7.5"
+panic-halt = "1.0.0"
+mm32-pac = { path = "../mm32-pac", features = ["rt"]}
+rtt-target = { version = "0.6.1", features = ["defmt"] }
+embassy-futures = "0.1.1"
+defmt = "1.0.1"
+
+[profile.release]
+codegen-units = 1
+debug = true 
+lto = true 
+opt-level = "s"

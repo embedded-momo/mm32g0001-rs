@@ -1,0 +1,106 @@
+name: MM32G0001 Series
+generated_from_pack: true
+pack_file_release: 1.0.1
+variants:
+- name: MM32G0001A1NC
+  cores:
+  - name: main
+    type: armv6m
+    core_access_options: !Arm
+      ap: !v1 0
+  memory_map:
+  - !Nvm
+    name: IROM1
+    range:
+      start: 0x8000000
+      end: 0x8004000
+    cores:
+    - main
+    access:
+      write: false
+      boot: true
+  - !Ram
+    name: IRAM1
+    range:
+      start: 0x20000000
+      end: 0x20000800
+    cores:
+    - main
+  flash_algorithms:
+  - mm32g0001_16
+- name: MM32G0001A1TC
+  cores:
+  - name: main
+    type: armv6m
+    core_access_options: !Arm
+      ap: !v1 0
+  memory_map:
+  - !Nvm
+    name: IROM1
+    range:
+      start: 0x8000000
+      end: 0x8004000
+    cores:
+    - main
+    access:
+      write: false
+      boot: true
+  - !Ram
+    name: IRAM1
+    range:
+      start: 0x20000000
+      end: 0x20000800
+    cores:
+    - main
+  flash_algorithms:
+  - mm32g0001_16
+- name: MM32G0001A6TC
+  cores:
+  - name: main
+    type: armv6m
+    core_access_options: !Arm
+      ap: !v1 0
+  memory_map:
+  - !Nvm
+    name: IROM1
+    range:
+      start: 0x8000000
+      end: 0x8004000
+    cores:
+    - main
+    access:
+      write: false
+      boot: true
+  - !Ram
+    name: IRAM1
+    range:
+      start: 0x20000000
+      end: 0x20000800
+    cores:
+    - main
+  flash_algorithms:
+  - mm32g0001_16
+flash_algorithms:
+- name: mm32g0001_16
+  stack_size: 256
+  description: MM32G0001 16KB Flash
+  default: true
+  instructions: d0h2SUFgd0lBYHBHdEhzSkJgdElBYIJggWAAIQFgwWgUIhFDwWDAaUAHBtRvSG5JAWAGIUFgbkmBYAAgcEdoSAFpgCIRQwFhAWmCFZFDAWEAIHBHMLUBIWFIyQZBYcFoFCQhQ8FgAWkEJSlDAWEBaUAiEUMBYV9JXEoA4BFgw2jbB/vRAWmpQwFhwWghQgTQwWghQ8FgASAwvQAgML0wtU9JymgUIxpDymBMSopgTUqKYEhhCGkgJCBDCGEIaUAiEEMIYUtISUoA4BBgzWjtB/vRCGmgQwhhyGgYQAPQyGgYQ8hgASAwvTC1//eJ/0JNKEb/99T/OkkIaYoVEEMIYQhpECQgQwhhPEgogDlIN0oA4BBgy2jbB/vRCGmgQwhhyGgUIhBAA9DIaBBDyGABIDC9ALX/99j///eM/wAgAL0wtSdJymgUIxpDymAKaQIkIkMKYUhhCGlAIhBDCGElSCJKAOAQYM1o7Qf70QhpoEMIYchoGEAD0MhoGEPIYAEgML0BIHBH8LUVTUkcSQjraEkABCQjQ+tgFCcWTBrgK2kBJjNDK2ETiAOAEEsA4Bxg7mj2B/vRK2lbCFsAK2HraDtCBNDoaDhD6GABIPC9gByJHpIcACni0QAg8L0jAWdFACACQKuJ781VVQAAADAAQP8PAACqqgAAAPj/H6VaAAAAAAAA
+  pc_init: 0xd
+  pc_uninit: 0x3f
+  pc_program_page: 0x187
+  pc_erase_sector: 0x141
+  pc_erase_all: 0x133
+  pc_blank_check: 0x183
+  data_section_offset: 0x200
+  flash_properties:
+    address_range:
+      start: 0x8000000
+      end: 0x8004000
+    page_size: 0x400
+    erased_byte_value: 0xff
+    program_page_timeout: 1000
+    erase_sector_timeout: 60000
+    sectors:
+    - size: 0x400
+      address: 0x0
