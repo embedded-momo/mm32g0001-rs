@@ -2,7 +2,7 @@
 target = "thumbv6m-none-eabi"
 
 [target.thumbv6m-none-eabi]
-runner = "probe-rs run --chip MM32G0001A1TC --chip-description-path ../MM32G0001_Series.yaml --protocol swd"
+runner = "probe-rs run --chip MM32G0001A1TC --chip-description-path MM32G0001_Series.yaml --protocol swd"
 rustflags = [
   "-C", "target-cpu=cortex-m0", 
   "-C", "link-arg=-Tlink.x",

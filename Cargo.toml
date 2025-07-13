@@ -1,0 +1,14 @@
+[workspace]
+resolver = "3"
+members = [
+  "mm32g0001-pac",
+  "examples/hello-world",
+  "examples/blink",
+  "examples/blink-async"
+]
+
+[profile.release]
+codegen-units = 1
+debug = true 
+lto = true 
+opt-level = "s"

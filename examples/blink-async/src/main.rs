@@ -8,7 +8,7 @@ use core::sync::atomic::Ordering;
 
 use cortex_m_rt::exception;
 use embassy_futures::yield_now;
-use mm32_pac as pac;
+use mm32g0001_pac as pac;
 use panic_halt as _;
 use rtt_target::rtt_init_defmt;
 

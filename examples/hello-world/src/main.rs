@@ -3,6 +3,7 @@
 
 use cortex_m as _;
 use defmt::info;
+use mm32g0001_pac as _;
 use panic_halt as _;
 use rtt_target::rtt_init_defmt;
 
